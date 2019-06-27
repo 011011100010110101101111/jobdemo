@@ -14,5 +14,5 @@
 1. clone 本仓库
 2. cd jobdemo
 3. mvn clean install
-4. 创建数据库，job 存储的数据库 jpa 会自己创建，quartz 需要执行脚本 ```/db/quartz-mysql.sql``` 文件来建表
+4. 创建数据库，job 存储的数据库 jpa 会自己创建，quartz 需要执行脚本 ```/db/quartz-mysql.sql``` 文件来建表,在建表前需要手动创建"quartz"数据库
 5. 启动 执行 ```org.gitors.jobdemo.JobdemoApplication``` 类 里面的 **main** 方法
