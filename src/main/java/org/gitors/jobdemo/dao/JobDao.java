@@ -1,6 +1,6 @@
-package com.hzsun.jobdemo.dao;
+package org.gitors.jobdemo.dao;
 
-import com.hzsun.jobdemo.entity.JobLogEntity;
+import org.gitors.jobdemo.entity.JobEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @company : 正元智慧
  * @date : 2019-06-26 15:06
  */
-public interface JobLogDao extends JpaRepository<JobLogEntity,String> {
+public interface JobDao extends JpaRepository<JobEntity,String> {
 
 }

@@ -1,7 +1,7 @@
-package com.hzsun.jobdemo.controller;
+package org.gitors.jobdemo.controller;
 
-import com.hzsun.jobdemo.entity.JobEntity;
-import com.hzsun.jobdemo.service.JobService;
+import org.gitors.jobdemo.entity.JobEntity;
+import org.gitors.jobdemo.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

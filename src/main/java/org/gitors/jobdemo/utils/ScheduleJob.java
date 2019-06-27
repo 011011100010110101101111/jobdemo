@@ -1,11 +1,11 @@
 
-package com.hzsun.jobdemo.utils;
+package org.gitors.jobdemo.utils;
 
 
-import com.hzsun.jobdemo.entity.JobEntity;
-import com.hzsun.jobdemo.entity.JobLogEntity;
-import com.hzsun.jobdemo.service.JobLogService;
-import com.hzsun.jobdemo.service.JobService;
+import org.gitors.jobdemo.entity.JobEntity;
+import org.gitors.jobdemo.entity.JobLogEntity;
+import org.gitors.jobdemo.service.JobLogService;
+import org.gitors.jobdemo.service.JobService;
 import org.quartz.JobExecutionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

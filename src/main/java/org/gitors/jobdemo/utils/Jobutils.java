@@ -1,6 +1,6 @@
-package com.hzsun.jobdemo.utils;
+package org.gitors.jobdemo.utils;
 
-import com.hzsun.jobdemo.entity.JobEntity;
+import org.gitors.jobdemo.entity.JobEntity;
 import org.quartz.*;
 
 

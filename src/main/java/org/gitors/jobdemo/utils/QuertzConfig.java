@@ -1,4 +1,4 @@
-package com.hzsun.jobdemo.utils;
+package org.gitors.jobdemo.utils;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

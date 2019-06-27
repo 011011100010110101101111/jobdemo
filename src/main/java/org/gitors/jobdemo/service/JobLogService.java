@@ -1,6 +1,6 @@
-package com.hzsun.jobdemo.service;
+package org.gitors.jobdemo.service;
 
-import com.hzsun.jobdemo.entity.JobLogEntity;
+import org.gitors.jobdemo.entity.JobLogEntity;
 
 import java.util.List;
 

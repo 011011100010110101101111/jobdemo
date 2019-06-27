@@ -1,8 +1,8 @@
-package com.hzsun.jobdemo.service.impl;
+package org.gitors.jobdemo.service.impl;
 
-import com.hzsun.jobdemo.dao.JobLogDao;
-import com.hzsun.jobdemo.entity.JobLogEntity;
-import com.hzsun.jobdemo.service.JobLogService;
+import org.gitors.jobdemo.dao.JobLogDao;
+import org.gitors.jobdemo.entity.JobLogEntity;
+import org.gitors.jobdemo.service.JobLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

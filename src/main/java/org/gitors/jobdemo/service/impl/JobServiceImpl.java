@@ -1,9 +1,9 @@
-package com.hzsun.jobdemo.service.impl;
+package org.gitors.jobdemo.service.impl;
 
-import com.hzsun.jobdemo.dao.JobDao;
-import com.hzsun.jobdemo.entity.JobEntity;
-import com.hzsun.jobdemo.service.JobService;
-import com.hzsun.jobdemo.utils.Jobutils;
+import org.gitors.jobdemo.dao.JobDao;
+import org.gitors.jobdemo.entity.JobEntity;
+import org.gitors.jobdemo.service.JobService;
+import org.gitors.jobdemo.utils.Jobutils;
 import org.quartz.CronTrigger;
 import org.quartz.Scheduler;
 import org.slf4j.Logger;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author : liuwenlong

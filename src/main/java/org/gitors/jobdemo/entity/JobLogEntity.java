@@ -1,4 +1,4 @@
-package com.hzsun.jobdemo.entity;
+package org.gitors.jobdemo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

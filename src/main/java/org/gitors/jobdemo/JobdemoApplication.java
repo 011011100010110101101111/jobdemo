@@ -1,4 +1,4 @@
-package com.hzsun.jobdemo;
+package org.gitors.jobdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

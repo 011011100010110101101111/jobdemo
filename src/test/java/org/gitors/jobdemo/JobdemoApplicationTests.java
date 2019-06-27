@@ -1,4 +1,4 @@
-package com.hzsun.jobdemo;
+package org.gitors.jobdemo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

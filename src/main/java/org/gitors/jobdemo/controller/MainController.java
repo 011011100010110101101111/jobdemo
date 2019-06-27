@@ -1,4 +1,4 @@
-package com.hzsun.jobdemo.controller;
+package org.gitors.jobdemo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
