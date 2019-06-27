@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 /**
  * @author : liuwenlong
  * @desc : SpringContextUtil 工具类
- * @company : 正元智慧
  * @date : 2019-06-26 19:46
  */
 @Component

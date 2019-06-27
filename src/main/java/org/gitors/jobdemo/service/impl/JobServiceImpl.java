@@ -18,7 +18,6 @@ import java.util.List;
 /**
  * @author : liuwenlong
  * @desc : 定时任务service
- * @company : 正元智慧
  * @date : 2019-06-26 15:05
  */
 @Service

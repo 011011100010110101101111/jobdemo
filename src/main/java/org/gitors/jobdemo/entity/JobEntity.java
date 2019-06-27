@@ -11,7 +11,6 @@ import java.util.Date;
 /**
  * @author : liuwenlong
  * @desc : 任务实体
- * @company : 正元智慧
  * @date : 2019-06-26 14:41
  */
 @Entity

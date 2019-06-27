@@ -8,7 +8,6 @@ import java.util.Date;
 /**
  * @author : liuwenlong
  * @desc : 任务日志实体
- * @company : 正元智慧
  * @date : 2019-06-26 14:49
  */
 @Entity

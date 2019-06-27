@@ -7,7 +7,6 @@ import org.quartz.*;
 /**
  * @author : liuwenlong
  * @desc : 任务工具类
- * @company : 正元智慧
  * @date : 2019-06-26 15:29
  */
 public class Jobutils {
