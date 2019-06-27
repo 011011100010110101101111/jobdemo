@@ -39,6 +39,19 @@ public class JobLogEntity implements Serializable {
      */
     private String jobId;
 
+    /**
+     * 运行耗时
+     */
+    private Long ranExpend;
+
+    public Long getRanExpend() {
+        return ranExpend;
+    }
+
+    public void setRanExpend(Long ranExpend) {
+        this.ranExpend = ranExpend;
+    }
+
     public String getId() {
         return id;
     }
@@ -85,5 +98,18 @@ public class JobLogEntity implements Serializable {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    @Override
+    public String toString() {
+        return "JobLogEntity{" +
+                "id='" + id + '\'' +
+                ", ranTime=" + ranTime +
+                ", status=" + status +
+                ", msg='" + msg + '\'' +
+                ", ranNum=" + ranNum +
+                ", jobId='" + jobId + '\'' +
+                ", ranExpend=" + ranExpend +
+                '}';
     }
 }
