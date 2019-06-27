@@ -28,7 +28,7 @@ public class ScheduleJob extends QuartzJobBean {
 
 	/**
 	 * 获取JobService 对象
-	 * @return
+	 * @return JobService 对象
 	 */
 	private JobService getJobService(){
 		if (jobService == null){
@@ -37,6 +37,10 @@ public class ScheduleJob extends QuartzJobBean {
 		return jobService;
 	}
 
+	/**
+	 * 获取日志service bean
+	 * @return 日志service
+	 */
 	private JobLogService getJobLogService(){
 		if (jobLogService == null){
 			jobLogService = (JobLogService) SpringContextUtil.getBean("jobLogServiceImpl");

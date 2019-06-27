@@ -61,7 +61,7 @@ public class JobEntity implements Serializable {
     private int retriedNum;
 
     /**
-     * 重试间隔时间：单位-毫秒
+     * 重试间隔时间：单位-秒
      */
     private int retryInterval;
     /**

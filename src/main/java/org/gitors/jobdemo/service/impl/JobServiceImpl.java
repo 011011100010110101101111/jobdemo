@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author : liuwenlong
@@ -80,6 +81,7 @@ public class JobServiceImpl implements JobService {
     @Override
     @Transactional(rollbackOn = Exception.class)
     public void save(JobEntity jobEntity) {
+        jobEntity.setId(UUID.randomUUID().toString().replace("-",""));
         jobDao.save(jobEntity);
         Jobutils.createScheduleJob(scheduler,jobEntity);
     }

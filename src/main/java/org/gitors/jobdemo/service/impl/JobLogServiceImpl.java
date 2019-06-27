@@ -25,7 +25,7 @@ public class JobLogServiceImpl implements JobLogService {
     }
 
     @Override
-    public List<JobLogEntity> list() {
-        return jobLogDao.findAll();
+    public List<JobLogEntity> list(String id) {
+        return jobLogDao.findAllByJobId(id);
     }
 }

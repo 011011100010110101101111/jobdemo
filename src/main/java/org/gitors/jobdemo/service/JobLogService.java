@@ -16,8 +16,9 @@ public interface JobLogService {
     void save(JobLogEntity jobLogEntity);
 
     /**
-     *
+     * 根据jobID查询
+     * @param jobId 任务ID
      * @return
      */
-    List<JobLogEntity> list();
+    List<JobLogEntity> list(String jobId);
 }

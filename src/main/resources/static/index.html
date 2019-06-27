@@ -2,9 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>demo quartz</title>
+    <title> quartz demo | liuwenlong </title>
+    <!-- import Vue.js -->
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <!-- import iView -->
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
-<body>
+<body style="text-align: center">
+<div id="app" style="margin: 20px 10% 0px 10%">
+    <i-table :columns="columns" :data="data" @on-row-click="listLog"></i-table>
+    <div style="height: 20px;"></div>
+    <i-table :columns="columns1" :data="data1"></i-table>
+</div>
 
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            columns: [
+                {
+                    title: '任务名',
+                    key: 'jobName'
+                },
+                {
+                    title: 'cron表达式',
+                    key: 'cronExpression'
+                },
+                {
+                    title: '是否重试',
+                    key: 'retry'
+                },
+                {
+                    title: '重试间隔',
+                    key: 'retryInterval'
+                },
+                {
+                    title: '失败重试次数',
+                    key: 'restryNum'
+                }
+            ],
+            data: [],
+            columns1: [
+                {"title":"运行时间","key":"ranTime"},
+                {"title":"运行状态","key":"status"},
+                {"title":"运行信息","key":"msg"}
+            ],
+            data1: []
+
+        },
+        methods: {
+
+            //查询列表
+            list: function () {
+                var that = this;
+                axios.post('/job/list').then(function (re) {
+                    that.data = re.data;
+                }) .catch(function (error) {
+                    console.log(error);
+                });
+            },
+            //list
+            listLog: function (row,index) {
+                var that = this;
+                axios.post('log/list/'+row.id).then(function (re) {
+                    that.data1 = re.data;
+                }) .catch(function (error) {
+                    console.log(error);
+                });
+            }
+        },
+        mounted: function () {
+            this.list();
+        }
+    })
+</script>
 </body>
 </html>
