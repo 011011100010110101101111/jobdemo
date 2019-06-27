@@ -4,8 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author : liuwenlong
- * @desc :
- * @company : 正元智慧
+ * @desc : 日志controller
  * @date : 2019-06-27 15:46
  */
 @RestController

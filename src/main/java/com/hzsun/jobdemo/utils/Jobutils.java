@@ -95,4 +95,30 @@ public class Jobutils {
             throw new RuntimeException("删除定时任务失败", e);
         }
     }
+
+    /**
+     * 更新定时任务
+     */
+    public static void updateScheduleJob(Scheduler scheduler, JobEntity jobEntity) {
+        try {
+            TriggerKey triggerKey = getTriggerKey(jobEntity.getId());
+
+            //表达式调度构建器
+            CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule(jobEntity.getCronExpression())
+                    .withMisfireHandlingInstructionDoNothing();
+
+            CronTrigger trigger = getCronTrigger(scheduler, jobEntity.getId());
+
+            //按新的cronExpression表达式重新构建trigger
+            trigger = trigger.getTriggerBuilder().withIdentity(triggerKey).withSchedule(scheduleBuilder).build();
+
+            //参数
+            trigger.getJobDataMap().put(JobEntity.JOB_PARAM_KEY, jobEntity);
+
+            scheduler.rescheduleJob(triggerKey, trigger);
+
+        } catch (SchedulerException e) {
+            throw new RuntimeException("更新定时任务失败", e);
+        }
+    }
 }

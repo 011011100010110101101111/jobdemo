@@ -31,4 +31,8 @@ public interface JobService {
     void reTry(JobEntity jobEntity);
 
     void deleteJob(String id);
+
+    void save(JobEntity jobEntity);
+
+    void update(JobEntity jobEntity);
 }

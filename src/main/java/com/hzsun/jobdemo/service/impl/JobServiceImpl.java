@@ -42,10 +42,9 @@ public class JobServiceImpl implements JobService {
             //初始化定时任务，如果已经在quartz中，则不重复初始化，如果不在quartz，则进行初始化
             CronTrigger cronTrigger = Jobutils.getCronTrigger(scheduler,jobEntity.getId());
             if (cronTrigger == null){
-                System.out.println("创建一条任务");
+                logger.info("初始化任务ID：" + jobEntity.getId());
                 Jobutils.createScheduleJob(scheduler,jobEntity);
             }
-            //TODO 如果在quartz队列还在，但是在数据库任务配置表已经删除的，则从队列移除任务。
         });
         logger.info("----------定时任务初始化成功----------");
     }
@@ -78,5 +77,19 @@ public class JobServiceImpl implements JobService {
         JobEntity jobEntity = new JobEntity();
         jobEntity.setId(id);
         jobDao.delete(jobEntity);
+    }
+
+    @Override
+    @Transactional(rollbackOn = Exception.class)
+    public void save(JobEntity jobEntity) {
+        jobDao.save(jobEntity);
+        Jobutils.createScheduleJob(scheduler,jobEntity);
+    }
+
+    @Override
+    @Transactional(rollbackOn = Exception.class)
+    public void update(JobEntity jobEntity) {
+        jobDao.save(jobEntity);
+        Jobutils.updateScheduleJob(scheduler,jobEntity);
     }
 }
