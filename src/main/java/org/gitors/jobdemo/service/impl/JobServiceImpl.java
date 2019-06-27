@@ -65,7 +65,7 @@ public class JobServiceImpl implements JobService {
             jobEntity.setRetriedNum(jobEntity.getRetriedNum() + 1);
         }
         jobDao.save(jobEntity);
-        Jobutils.deleteScheduleJob(scheduler,jobEntity.getId());
+//        Jobutils.deleteScheduleJob(scheduler,jobEntity.getId());
         Jobutils.retry(scheduler,jobEntity);
     }
 
