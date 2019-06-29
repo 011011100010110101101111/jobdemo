@@ -69,6 +69,19 @@ public class JobEntity implements Serializable {
      */
     private String targetId;
 
+    /**
+     * 重试时间，用于置0已重试次数。
+     */
+    private Date retryDate;
+
+    public Date getRetryDate() {
+        return retryDate;
+    }
+
+    public void setRetryDate(Date retryDate) {
+        this.retryDate = retryDate;
+    }
+
     public int getRetryInterval() {
         return retryInterval;
     }
