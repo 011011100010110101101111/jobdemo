@@ -2,6 +2,10 @@ package org.gitors.jobdemo.utils;
 
 import org.gitors.jobdemo.entity.JobEntity;
 import org.quartz.*;
+import org.springframework.scheduling.support.CronSequenceGenerator;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -119,5 +123,20 @@ public class Jobutils {
         } catch (SchedulerException e) {
             throw new RuntimeException("更新定时任务失败", e);
         }
+    }
+
+    public static void main(String[] args) {
+        String cron="0 0/10 * * * ? ";  //每10分钟执行一次
+        CronSequenceGenerator cronSequenceGenerator = new CronSequenceGenerator(cron);
+        Date currentTime = new Date();  //当前系统时间
+        Date nextTimePoint = cronSequenceGenerator.next(currentTime);   //下次执行时间
+        Date nextNextTimePoint = cronSequenceGenerator.next(nextTimePoint);  //下下次执行时间
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String time=sdf.format(currentTime);
+        String nextTime=sdf.format(nextTimePoint);
+        String nextDoubleTme=sdf.format(nextNextTimePoint);
+        System.out.println("当前系统时间为："+time);
+        System.out.println("下次执行时间为:"+nextTime);
+        System.out.println("下下次执行时间为："+nextDoubleTme);
     }
 }
